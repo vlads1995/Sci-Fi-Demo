@@ -1,2 +1,3 @@
 # Sci-Fi-Demo
-This is 3D first-person demo shooter. Use WASD for movement, E for interact (with coin and shark for examlple), R for reload weapon, LMB for shoot. The box near you is destructible.
+
+3D Shooter demo with demonstrate some mechanics, such as: raycast, navmesh, destructible objects and other. WASD for movement, E - interact ( you can pickup the coin, buy gun), R - reload Mouse0(left MB) - shoot. Note: box near you is destructible
