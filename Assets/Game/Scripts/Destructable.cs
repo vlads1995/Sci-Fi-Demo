@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Destructable : MonoBehaviour
 {
@@ -12,5 +10,4 @@ public class Destructable : MonoBehaviour
         Instantiate(_crateDestroyed, transform.position, transform.rotation);
         Destroy(this.gameObject);
     }
-
 }

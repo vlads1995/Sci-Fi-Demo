@@ -1,33 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SharkShop : MonoBehaviour
 {
-    
     [SerializeField]
-    private GameObject weapon;
+    private GameObject _weapon;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Player player = other.GetComponent<Player>();
-                if (player.getCoin == true)
+                var player = other.GetComponent<Player>();
+                if (player.isGetCoin == true)
                 {
-                   
-                    player.getCoin = false;
-                    weapon.SetActive(true);
-                    player.canfire = true;
-                    UIManager uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+                    player.isGetCoin = false;
+                    _weapon.SetActive(true);
+                    player.isCanFire = true;
+                    var uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
                     uIManager.coin.SetActive(false);
-                    AudioSource audio = GetComponent<AudioSource>();
+                    var audio = GetComponent<AudioSource>();
                     audio.Play();
                 }
-                if (player.getCoin == false)
+
+                if (player.isGetCoin == false)
                 {
-                    Debug.Log("U have no coin");
+                    Debug.Log("You have no coin");
                 }
 
             }

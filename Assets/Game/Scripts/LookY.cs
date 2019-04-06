@@ -1,22 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LookY : MonoBehaviour
 {
-    [SerializeField]
-    private float _sensitivity = 1f;
-    void Start()
-    {
-        
-    }
+    private const float Sensitivity = 1f;
 
-  
-    void Update()
+    private void Update()
     {
-        float _mouseY = Input.GetAxis("Mouse Y");
-        Vector3 newRotation = transform.localEulerAngles;       
-        newRotation.x -= _mouseY * _sensitivity;
+        var _mouseY = Input.GetAxis("Mouse Y");
+        var newRotation = transform.localEulerAngles;       
+        newRotation.x -= _mouseY * Sensitivity;
         transform.localEulerAngles = newRotation;
     }
 }
